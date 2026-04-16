@@ -49,7 +49,7 @@ HashMap * createMap(long capacity) {
     map->capacity = capacity;
     map->current = -1;
     map->size = 0;
-    map->bucket = NULL;
+    map->buckets = NULL;
     return map;
 }
 
