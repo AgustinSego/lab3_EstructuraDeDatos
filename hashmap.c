@@ -62,7 +62,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     int pos = hash(key, map->capacity);
     while(map->buckets[pos] != NULL){
         if(map->buckets[pos]->key || is_equal(key, map->buckets[pos]->key) == 1)break;
-        pos+=1;
+        pos = (pos + 1) % map->capacity;
     }
     if(map->buckets[pos] == NULL){
         map->buckets[pos] = (Pair*)malloc(sizeof(Pair));
