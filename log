@@ -190,3 +190,18 @@ hashmap.c:53:17: error: ‘map->buckets’ is a pointer to pointer; did you mean
       |                 ^~
       |     (*          )
 0f8fb52
+Thu Apr 16 10:44:28 PM UTC 2026: 
+ hashmap.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:52:21: error: ‘pair’ undeclared (first use in this function); did you mean ‘Pair’?
+   52 |     map->buckets = (pair *)malloc(sizeof(Pair) * capacity);
+      |                     ^~~~
+      |                     Pair
+hashmap.c:52:21: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:52:27: error: expected expression before ‘)’ token
+   52 |     map->buckets = (pair *)malloc(sizeof(Pair) * capacity);
+      |                           ^
+1bd498b
