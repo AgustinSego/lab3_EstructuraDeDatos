@@ -167,3 +167,8 @@ hashmap.c:54:17: error: request for member ‘value’ in something not a struct
    54 |     map->buckets.value = NULL;
       |                 ^
 1efa14a
+Thu Apr 16 10:30:45 PM UTC 2026: 
+ hashmap.c | 2 --
+ 1 file changed, 2 deletions(-)
+ tests:  0|0
+6336d24
