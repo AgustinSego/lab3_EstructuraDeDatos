@@ -71,9 +71,9 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->size += 1;
     }
     else if(map->buckets[pos]->key == NULL){
-        map->buckets->key = key;
+        strcpy(map->buckets->key = key);
     }else if(is_equal(key, map->buckets[pos]->key) == 1){
-        map->buckets->values = values;
+        map->buckets->values = value;
     }
 }
 

@@ -18,3 +18,28 @@ hashmap.c:76:32: error: ‘values’ undeclared (first use in this function); di
       |                                value
 hashmap.c:76:32: note: each undeclared identifier is reported only once for each function it appears in
 8e1216e
+Thu Apr 16 08:45:45 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:74:28: error: ‘map->buckets’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   74 |         strcpy(map->buckets->key = key);
+      |                            ^~
+      |                (*          )
+hashmap.c:74:9: error: too few arguments to function ‘strcpy’
+   74 |         strcpy(map->buckets->key = key);
+      |         ^~~~~~
+In file included from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/features.h:511,
+                 from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/libc-header-start.h:33,
+                 from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/stdio.h:28,
+                 from test.c:1:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/string_fortified.h:77:1: note: declared here
+   77 | __NTH (strcpy (__fortify_clang_overload_arg (char *, __restrict, __dest),
+      | ^~~~~
+hashmap.c:76:21: error: ‘map->buckets’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   76 |         map->buckets->values = value;
+      |                     ^~
+      |         (*          )
+da7b968
