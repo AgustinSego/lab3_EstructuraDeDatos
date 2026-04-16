@@ -175,3 +175,18 @@ Thu Apr 16 10:30:45 PM UTC 2026:
 Thu Apr 16 10:34:39 PM UTC 2026: 
  tests:  0|0
 15eb7ec
+Thu Apr 16 10:35:31 PM UTC 2026: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:52:17: error: ‘map->buckets’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   52 |     map->buckets->key= NULL;
+      |                 ^~
+      |     (*          )
+hashmap.c:53:17: error: ‘map->buckets’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   53 |     map->buckets->value = NULL;
+      |                 ^~
+      |     (*          )
+0f8fb52
