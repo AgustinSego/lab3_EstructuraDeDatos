@@ -154,3 +154,16 @@ hashmap.c:54:17: error: ‘map->buckets’ is a pointer to pointer; did you mean
       |                 ^~
       |     (*          )
 06eb594
+Thu Apr 16 10:30:29 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:53:17: error: request for member ‘key’ in something not a structure or union
+   53 |     map->buckets.key = NULL;
+      |                 ^
+hashmap.c:54:17: error: request for member ‘value’ in something not a structure or union
+   54 |     map->buckets.value = NULL;
+      |                 ^
+1efa14a

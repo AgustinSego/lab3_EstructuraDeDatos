@@ -50,8 +50,8 @@ HashMap * createMap(long capacity) {
     map->current = -1;
     map->size = 0;
     map->buckets = NULL;
-    map->buckets->key = NULL;
-    map->buckets->value = NULL;
+    map->buckets.key = NULL;
+    map->buckets.value = NULL;
     return map;
 }
 
