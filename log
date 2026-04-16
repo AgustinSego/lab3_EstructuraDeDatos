@@ -123,3 +123,13 @@ Thu Apr 16 10:24:45 PM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 d8a5ae6
+Thu Apr 16 10:27:18 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:52:18: error: assignment to ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Wincompatible-pointer-types]
+   52 |     map->buckets = (Pair *)malloc(sizeof(Pair));
+      |                  ^
+c49d90e
