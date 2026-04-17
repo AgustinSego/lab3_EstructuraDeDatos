@@ -169,8 +169,8 @@ void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     Pair **oldBuckets = map->buckets;
     
+    map->capacity *= 2;
     map->buckets = (Pair **)malloc(sizeof(Pair *) * (map->capacity));
-    map->capacity = map->capacity * 2;
     map->size = 0;
     
     for(long i = 0; i < (map->capacity / 2); i++){
