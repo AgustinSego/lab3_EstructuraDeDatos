@@ -167,8 +167,15 @@ Pair * nextMap(HashMap * map) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
+    Pair **oldBuckest = map->buckets;
 
+    map->capacity = map->capacity * 2;
+    map->buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
+    map->size = 0; 
 
+    for(long i = 0; i < map->capacity;i++){
+        insertMap(map, oldBuckest[i]->key ,oldBuckest[i]->value);
+    }
 }
 
 
