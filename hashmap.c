@@ -170,7 +170,7 @@ void enlarge(HashMap * map) {
     Pair **oldBuckets = (Pair **)malloc(sizeof(Pair *));
     for(long i = 0; i < map->capacity; i++){
         if(map->buckets[i] != NULL){
-            strcpy(oldBuckets[i]->key,map->buckets[i]->key);
+            oldBuckets[i]->key = map->buckets[i]->key;
             oldBuckets[i]->value = map->buckets[i]->value;
         }
     }
