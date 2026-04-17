@@ -294,3 +294,9 @@ hashmap.c:28:29: note: expected ‘long int’ but argument is of type ‘HashMa
    28 | long hash( char * key, long capacity) {
       |                        ~~~~~^~~~~~~~
 c133310
+Fri Apr 17 03:05:29 AM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  9|3
+total_score: 30/60
+1a42b0e

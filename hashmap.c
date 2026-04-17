@@ -116,7 +116,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 // Recuerde actualizar la variable size.
 
 void eraseMap(HashMap * map,  char * key) {
-    long pos = hash(key, map);
+    long pos = hash(key, map->capacity);
     if(strcmp(map->buckets[pos]->key, key) == 0){
         map->buckets[pos]->key = NULL;
         map->size -= 1;
