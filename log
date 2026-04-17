@@ -324,3 +324,18 @@ Fri Apr 17 03:30:31 AM UTC 2026:
  tests:  11|2
 total_score: 40/60
 eac823e
+Fri Apr 17 03:32:56 AM UTC 2026: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:136:34: error: expected ‘;’ before ‘)’ token
+  136 |     for(long i = 0; i < map->size){
+      |                                  ^
+      |                                  ;
+hashmap.c:139:1: error: control reaches end of non-void function [-Werror=return-type]
+  139 | }
+      | ^
+cc1: all warnings being treated as errors
+3557390
