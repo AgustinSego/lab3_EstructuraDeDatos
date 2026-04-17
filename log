@@ -415,3 +415,27 @@ Fri Apr 17 09:55:22 PM UTC 2026:
  1 file changed, 7 insertions(+)
  tests:  0|0
 601deac
+Fri Apr 17 10:11:55 PM UTC 2026: 
+ hashmap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:175:25: error: ‘oldBuckets’ undeclared (first use in this function); did you mean ‘oldBuckest’?
+  175 |     for(long i = 0; i < oldBuckets->capacity; i++){
+      |                         ^~~~~~~~~~
+      |                         oldBuckest
+hashmap.c:175:25: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:176:12: error: ‘oldbuckets’ undeclared (first use in this function); did you mean ‘oldBuckest’?
+  176 |         if(oldbuckets[i] != NULL) insert(map, oldbuckets[i]->key, oldbuckets[i]->value);
+      |            ^~~~~~~~~~
+      |            oldBuckest
+hashmap.c:176:35: error: implicit declaration of function ‘insert’; did you mean ‘insertMap’? [-Wimplicit-function-declaration]
+  176 |         if(oldbuckets[i] != NULL) insert(map, oldbuckets[i]->key, oldbuckets[i]->value);
+      |                                   ^~~~~~
+      |                                   insertMap
+hashmap.c:170:12: error: unused variable ‘oldBuckest’ [-Werror=unused-variable]
+  170 |     Pair **oldBuckest = map->buckets;
+      |            ^~~~~~~~~~
+cc1: all warnings being treated as errors
+d6a6470
