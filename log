@@ -279,3 +279,18 @@ Fri Apr 17 02:49:12 AM UTC 2026:
  tests:  8|3
 total_score: 30/60
 dcc9d14
+Fri Apr 17 03:05:01 AM UTC 2026: 
+ hashmap.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:119:26: error: passing argument 2 of ‘hash’ makes integer from pointer without a cast [-Wint-conversion]
+  119 |     long pos = hash(key, map);
+      |                          ^~~
+      |                          |
+      |                          HashMap * {aka struct HashMap *}
+hashmap.c:28:29: note: expected ‘long int’ but argument is of type ‘HashMap *’ {aka ‘struct HashMap *’}
+   28 | long hash( char * key, long capacity) {
+      |                        ~~~~~^~~~~~~~
+c133310
