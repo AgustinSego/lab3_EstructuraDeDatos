@@ -173,7 +173,7 @@ void enlarge(HashMap * map) {
     map->capacity = map->capacity * 2;
     map->size = 0;
     for(long i = 0; i < oldBuckets->capacity; i++){
-        if(oldbuckets[i] != NULL) insert(map, oldbuckets[i]->key, oldbuckets[i]->value);
+        if(oldBuckets[i] != NULL) insert(map, oldBuckets[i]->key, oldBuckets[i]->value);
     }
     
 }
