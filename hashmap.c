@@ -167,18 +167,13 @@ Pair * nextMap(HashMap * map) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-    Pair **oldBuckets = (Pair **)malloc(sizeof(Pair *));
-    for(long i = 0; i < map->capacity; i++){
-        if(map->buckets[i] != NULL){
-            oldBuckets[i]->key = map->buckets[i]->key;
-            oldBuckets[i]->value = map->buckets[i]->value;
-        }
-    }
-
+    Pair **oldBuckets = map->buckets;
+    
     map->buckets = (Pair **)malloc(sizeof(Pair *) * (map->capacity));
     map->capacity = map->capacity * 2;
     map->size = 0;
-    for(long i = 0; i < map->capacity; i++){
+    
+    for(long i = 0; i < (map->capacity / 2); i++){
         if(oldBuckets[i] != NULL) insertMap(map, oldBuckets[i]->key, oldBuckets[i]->value);
     }
     
