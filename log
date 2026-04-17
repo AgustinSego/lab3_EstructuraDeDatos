@@ -227,3 +227,43 @@ Fri Apr 17 02:45:38 AM UTC 2026:
  tests:  5|4
 total_score: 20/60
 4216b76
+Fri Apr 17 02:47:03 AM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:97:38: error: passing argument 1 of ‘strcmp’ makes pointer from integer without a cast [-Wint-conversion]
+   97 |     if(strcmp(map->buckets[pos]->key == key) == 0) return map->buckets[pos];
+      |               ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                      |
+      |                                      int
+In file included from test.c:3:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/string.h:156:32: note: expected ‘const char *’ but argument is of type ‘int’
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |                    ~~~~~~~~~~~~^~~~
+hashmap.c:97:8: error: too few arguments to function ‘strcmp’
+   97 |     if(strcmp(map->buckets[pos]->key == key) == 0) return map->buckets[pos];
+      |        ^~~~~~
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/string.h:156:12: note: declared here
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |            ^~~~~~
+hashmap.c:100:46: error: passing argument 1 of ‘strcmp’ makes pointer from integer without a cast [-Wint-conversion]
+  100 |             if(strcmp(map->buckets[pos]->key == key) == 0)return map->buckets[pos];
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+      |                                              |
+      |                                              int
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/string.h:156:32: note: expected ‘const char *’ but argument is of type ‘int’
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |                    ~~~~~~~~~~~~^~~~
+hashmap.c:100:16: error: too few arguments to function ‘strcmp’
+  100 |             if(strcmp(map->buckets[pos]->key == key) == 0)return map->buckets[pos];
+      |                ^~~~~~
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/string.h:156:12: note: declared here
+  156 | extern int strcmp (const char *__s1, const char *__s2)
+      |            ^~~~~~
+hashmap.c:105:1: error: control reaches end of non-void function [-Werror=return-type]
+  105 | }
+      | ^
+cc1: all warnings being treated as errors
+6be0c99
